@@ -30,8 +30,8 @@ public class SpawnManager : MonoBehaviour
         if(numEnemies < 8)
         {
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-            float xPos = Random.Range(player.transform.position.x - spawnOffset / 2, player.transform.position.x + spawnOffset / 2);
-            float yPos = player.transform.position.y + spawnOffset;
+            float xPos = Random.Range(-113, 116);
+            float yPos = Random.Range(-111, 119);
             Instantiate(enemyPrefabs[enemyIndex], new Vector3(xPos, yPos, 0), enemyPrefabs[enemyIndex].transform.rotation);
             numEnemies++;
         }
