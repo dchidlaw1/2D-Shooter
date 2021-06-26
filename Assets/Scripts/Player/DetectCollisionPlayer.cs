@@ -5,14 +5,16 @@ using UnityEngine;
 public class DetectCollisionPlayer : MonoBehaviour
 {
 
-    public float HP = 100.0f;
-    public float damage = 20.0f;
+    public int HP = 100;
+    public int damage = 20;
     private Vector3 knockBack = new Vector3(-10, 0, 0);
     private GameManager game;
+    private HealthBar health;
     // Start is called before the first frame update
     void Start()
     {
         game = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        health = GameObject.Find("HealthBar").GetComponent<HealthBar>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class DetectCollisionPlayer : MonoBehaviour
         if (collision.tag == "Enemy1")
         {
             HP -= damage;
+            health.SetHealth(HP);
             if (HP <= 0)
             {
                 game.GameOver();

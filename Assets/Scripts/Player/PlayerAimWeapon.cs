@@ -23,7 +23,7 @@ public class PlayerAimWeapon : MonoBehaviour
         Vector3 mousePosition = GetMousePos();
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0, 0, angle - 70);
+        transform.eulerAngles = new Vector3(0, 0, angle - 80);
     }
     //methods to get mouse position and convert to world units, obtained from Code Monkey on Youtube
     private Vector3 GetMousePos()

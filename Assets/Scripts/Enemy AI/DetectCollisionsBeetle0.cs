@@ -8,10 +8,12 @@ public class DetectCollisionsBeetle0 : MonoBehaviour
     public float HP = 50.0f;
     public float damage = 20.0f;
     private SpawnManager spawner;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         spawner = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class DetectCollisionsBeetle0 : MonoBehaviour
             {
                 Destroy(gameObject);
                 spawner.removeEnemy();
+                gameManager.addToScore(100);
             }         
             Destroy(collision.gameObject);
         }
