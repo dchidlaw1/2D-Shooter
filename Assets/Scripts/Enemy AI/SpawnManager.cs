@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
 
     public GameObject[] enemyPrefabs;
+    public GameObject heartPrefab;
     GameObject player;
     public float spawnOffset = 80.0f;
     public float startDelay = 2.0f;
@@ -46,5 +47,10 @@ public class SpawnManager : MonoBehaviour
     public void removeEnemy()
     {
         numEnemies--;
+    }
+
+    public void addHealth(Vector3 pos)
+    {
+        Instantiate(heartPrefab, pos, heartPrefab.transform.rotation);
     }
 }

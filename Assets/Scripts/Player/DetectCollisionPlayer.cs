@@ -36,6 +36,21 @@ public class DetectCollisionPlayer : MonoBehaviour
 
             transform.position += knockBack;
         }
+        if (collision.tag == "Heart")
+        {
+            if (HP <= 70)
+            {
+                HP += 30;
+            }
+            else
+            {
+                HP = 100;
+
+            }
+            health.SetHealth(HP);
+            Destroy(collision.gameObject);
+
+        }
 
     }
 }

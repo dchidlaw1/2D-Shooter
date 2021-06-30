@@ -267,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 6201118814386374256, guid: 5b76c8fc88eeed44aab58bfec7367d3f, type: 3}
+  heartPrefab: {fileID: 6100139998966338858, guid: 62379e97e4680c543b5d5c60e213a5cf, type: 3}
   spawnOffset: 80
   startDelay: 2
 --- !u!4 &24844842

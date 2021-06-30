@@ -29,11 +29,19 @@ public class DetectCollisionsBeetle0 : MonoBehaviour
             HP -= damage;
             if(HP <= 0)
             {
+                float num = Random.Range(0, 100);
+
+                //health drops 10% of the time
+                if(num < 10)
+                {
+                    spawner.addHealth(gameObject.transform.position);
+                }            
                 Destroy(gameObject);
                 spawner.removeEnemy();
                 gameManager.addToScore(100);
             }         
             Destroy(collision.gameObject);
+            
         }
         
     }
